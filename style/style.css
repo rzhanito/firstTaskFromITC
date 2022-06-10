@@ -1,0 +1,478 @@
+/* normalize */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- */
+
+body,
+html {
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    background: #343539;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+/* ------- REUSABLE CLASSES ------*/
+
+.container {
+    max-width: 1100px;
+}
+
+.order-block {
+    padding-top: 40px;
+}
+
+.block-title {
+    margin: 0 0 16px 0;
+    display: flex;
+    align-items: center;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    margin-left: 8px;
+}
+
+.input {
+    margin: 8px 0 16px 0;
+    height: 44px;
+    padding: 13px 14px;
+}
+
+.container label {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.select-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+
+/* -------------------- */
+
+/* ------ ORDER ------*/
+.order {
+    padding: 40px 0 129px 150px;
+    max-width: 800px;
+}
+
+.order-title {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 68px;
+    margin: 0 0 -20px 0;
+}
+
+/* ------ ROUTE ------*/
+.route {
+    position: relative;
+}
+
+.route-input {
+    max-width: 728px;
+    width: 100%;
+}
+
+/* -------------------- */
+
+/* ------ TRANSPORT ------*/
+.select-list {
+    height: 44px;
+    width: 172px;
+    padding: 13px 14px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(175, 194, 198, 1) 95%);
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.transport-list {
+    display: flex;
+}
+
+.transport label:first-child {
+    margin-right: 12px;
+}
+
+/* -------------------- */
+
+/* ------ GOODS ------*/
+.select-good-type {
+    width: 100%;
+}
+
+.goods-grid {
+    display: grid;
+    grid-template-areas: 'main main'
+    'danger value';
+    justify-content: start;
+}
+
+.goods-type-block {
+    margin-bottom: 16px;
+    grid-area: main;
+}
+
+.good-value {
+    margin-left: 12px;
+}
+
+.goods-value {
+    display: flex;
+    flex-direction: column;
+    grid-area: value;
+}
+
+.select-danger-type {
+    grid-area: danger;
+}
+
+.dangerous-goods {
+    max-width: 172px;
+}
+
+/* ------ goods ------*/
+
+
+/* ------ checkbox ------*/
+.temp-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.temp-label:hover input ~ .checkmark {
+    background: none;
+}
+
+.temp-label input:checked ~ .checkmark {
+    background: #EF483E;
+}
+
+.goods-checkbox {
+    margin-right: 12px;
+    width: 24px;
+    cursor: pointer;
+    height: 24px;
+    background: #343539;
+    opacity: .1;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background: none;
+    border: 2px solid white;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.temp-label .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.temp-label input:checked ~ .checkmark:after {
+    display: block;
+
+}
+
+/* ------ checkbox ------*/
+
+/* -------------------- */
+
+/* ------ ARRIVAL-TIME ------*/
+.arrival-time-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.arrival-time-info-when, .arrival-time-info-km {
+    font-size: 13px;
+    line-height: 16px;
+    color: #CFCFCF;
+}
+
+.arrival-address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 12px;
+    background: #4B4B4F;
+    margin-bottom: 4px;
+}
+
+.no-address h4 {
+    position: relative;
+    color: #CFCFCF;
+    padding-left: 25px;
+}
+
+.sent-address h4:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url("../img/red-circle.svg") no-repeat;
+    left: 0;
+}
+
+.arrival-to-address h4:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url("../img/white-circle.svg") no-repeat;
+    left: 0;
+}
+
+.no-address-button {
+    padding: 4px 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+    background-color: #717174;
+    border: none;
+    border-radius: 2px;
+}
+
+.no-address-button-dim {
+    opacity: .3;
+}
+
+/* -------------------- */
+
+/* ---------- COMMENT ----------*/
+.order-block.comment {
+    padding: 16px 0 0 0;
+}
+
+.ext-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ext-info textarea {
+    margin-top: 8px;
+    padding: 13px 14px;
+    min-height: 80px;
+    resize: none;
+}
+
+.ext-info textarea::placeholder {
+    color: #CFCFCF;
+    line-height: 18px;
+}
+
+
+/* -------------------- */
+
+.req-info {
+    max-width: 356px;
+    padding: 24px;
+    background: #4B4B4F;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 600px;
+    top: 17.58%;
+}
+
+.req-info p {
+    font-size: 15px;
+    line-height: 18px;
+    color: #fff;
+}
+
+/* ------ adaptive ------ */
+@media (max-width: 975px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    .order-title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 40px;
+    }
+
+    .order {
+        padding: 40px;
+    }
+
+    .order-block.route {
+        padding-top: 0;
+    }
+
+    .req-info {
+        position: relative;
+        left: 0;
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        max-width: 1020px;
+    }
+
+    .order-title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 40px;
+    }
+
+    .order-block.route {
+        padding-top: 0;
+    }
+
+    .req-info {
+        top: 400px;
+        right: 200px;
+    }
+
+    .order {
+        margin: 0;
+        padding: 40px 60px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .order-title {
+        font-size: 56px;
+        line-height: 40px;
+        margin-bottom: 40px;
+    }
+
+    .req-info {
+        top: 400px;
+        right: 400px;
+    }
+}
+
+@media (min-width: 1350px) {
+    .req-info {
+        right: 540px;
+    }
+}
+
+@media (min-width: 1450px) {
+    .container {
+        max-width: 1440px;
+    }
+
+    .order-title {
+        font-size: 56px;
+        line-height: 40px;
+        margin-bottom: 40px;
+    }
+
+    .order-block.route {
+        padding-top: 0;
+    }
+
+    .req-info {
+        right: 400px;
+        top: 125px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .req-info {
+        right: 570px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .req-info {
+        right: 770px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        max-width: 410px;
+    }
+
+    .order {
+        padding: 40px 16px 59px 16px;
+    }
+
+    .order-title {
+        font-size: 32px;
+        line-height: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .route {
+        padding-top: 0;
+    }
+
+    .route-input {
+        max-width: 343px;
+        width: 100%;
+    }
+
+    .req-info {
+        position: relative;
+        width: 343px;
+        max-height: 102px;
+        margin-top: 40px;
+        right: 1px;
+    }
+
+    .good-value {
+        margin-top: -84px;
+        margin-left: 4px;
+        height: 100%;
+    }
+
+    .select-danger-type {
+        min-width: 343px;
+        width: 100%;
+    }
+
+    input, select {
+        max-width: 165px;
+    }
+
+    .goods-grid {
+    }
+
+    .goods-type-block {
+        max-width: 165px;
+    }
+
+}
+
+/* ---------- */
+
